@@ -1,9 +1,9 @@
-(ns leiningen.kibit
+(ns com.lemonodor.kribitz
   (:require [leiningen.core.eval :refer [eval-in-project]]))
 
-(defn ^:no-project-needed kibit
+(defn ^:no-project-needed kribitz
   [project & args]
-  (let [kibit-project '{:dependencies [[jonase/kibit "0.0.9-SNAPSHOT"]]}
+  (let [kibit-project '{:dependencies [[com.lemonodor.kribitz "0.0.9-SNAPSHOT"]]}
         paths (or (:source-paths project) [(:source-path project)])
         src `(kibit.driver/run '~paths ~@args)
         req '(require 'kibit.driver)]
